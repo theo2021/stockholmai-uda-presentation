@@ -115,7 +115,7 @@
             <h3>How do we solve this?</h3>
 <ol>
 <li>
-<p><strong>Domain Generalization</strong>: Adapting models to work across varied domains.</p>
+<p><strong>Domain Generalization</strong>: Building models to work across varied domains.</p>
 </li>
 <li>
 <p><strong>Domain Adaptation</strong>: Focus on the Target Domain (deployment)</p>
@@ -225,6 +225,65 @@ Oracle (Segformer), 82.4
     
         <section >
             
+            <h3>History of UDA</h3>
+<p><img src="ganin.png" alt="Alt text"></p>
+<p style="color: #EED971">Create a domain agnostic feature representation</p>
+<p style="font-size:30px">Domain-Adversarial Training of Neural Networks, Ganin et al 2016.</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>Improvements</h3>
+<ul>
+<li>Per class discriminators (Chen et al)</li>
+<li>Move the discriminator to the prediction</li>
+<li>Use multiple discriminators (Tsai et al)</li>
+<li>Use the entropy of the prediction instead (Advent)</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>New SoTAs: DaFormer</h3>
+<div class="r-stack">
+<p style="width: 80%"><img src="daformer.png" alt="Daformer"></p>
+</div>
+<p>Self-Train on target:</p>
+<ul>
+<li>Avoid Collapse through Source Loss</li>
+<li>Avoid Overfitting to Source with Dist loss</li>
+</ul>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
+            <h3>DACS: An easy trick that works</h3>
+<p><img src="dacs.png" alt="DACS"></p>
+<p>Take objects from the Source Image and put them into the target sample. Train using those ground truths.</p>
+
+            </section>
+    
+
+
+
+    
+        <section >
+            
             <h3>Online UDA</h3>
 <p><span style="color: #EED971">Can we adapt to new domains as they appear? </span></p>
 <p>Why?</p>
@@ -268,7 +327,7 @@ Oracle (Segformer), 82.4
             
             <h3>Challenges</h3>
 <ul>
-<li>Catastrofic forgetting</li>
+<li>Catastrophic forgetting</li>
 <li>Speed of Adapting</li>
 <li>Self-Training confidence not calibrated</li>
 </ul>
